@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const userRoute = require("./routes/user");
 const app = express();
 
-app.use(cors({origin:'*'}));
+app.use(cors({origin:'*'}));//permitted for entire server
 app.use(bodyParser.json());
 
 app.use("/user", userRoute);
@@ -21,7 +21,7 @@ app.use((req, res) => {
 sequelize
   .sync()
   .then(() => {
-    app.listen(3000);
+    app.listen(process.env.PORT);
   })
   .catch((err) => {
     console.log("Sequelize sync failed");

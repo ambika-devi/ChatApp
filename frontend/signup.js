@@ -31,13 +31,17 @@ e.preventDefault();
          };
           const response = await axios.post("http://localhost:3000/user/register",data);
     console.log(response);
-    if (response.status == 201) createToast(response.data.msg, "green");
+    if (response.status == 201) 
+    alert(response.data.msg);
+    //createToast(response.data.msg, "green");
   } catch (error) {
     console.log(error);
     if (error.response.status == 400) {
-        createToast(error.response.data.msg);
+        alert(error.response.data.msg);  
+      //createToast(error.response.data.msg);
       } else if (error.response.status == 500) {
-        createToast(error.response.data.msg);
+        alert(error.response.data.msg);
+        //createToast(error.response.data.msg);
       }
   }
 };

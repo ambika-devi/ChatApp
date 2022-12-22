@@ -21,10 +21,10 @@ exports.postRegister = (req, res) => {
         password: hash,
       });
       // console.log(response);
-      res.status(201).send({ msg: "New user successfull registered" });
+      res.status(201).send({ msg: "New user successfully registered!" });
     } catch (error) {
       console.log(err);
-      res.status(400).send({ msg: "User Already exists, try login" });
+      res.status(400).send({ msg: "User Already exists! try login" });
     }
   });
 };
