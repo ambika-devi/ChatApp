@@ -27,16 +27,16 @@
     <section class="main-section">
       <div
         class="px-4 py-5 px-md-5 text-center text-lg-start"
-        style="background-color: hsl(138, 78%, 51%); height: 100vh"
+        style="background-color: hsl(133, 84%, 52%); height: 100vh"
       >
         <div class="container">
           <div class="row gx-lg-5 align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
               <h1 class="my-5 display-3 fw-bold ls-tight">
-                Sign-Up to use<br />
-                <span class="text-primary">Chat App</span>
+                Login and Start Chatting<br />
+                <!-- <span class="text-primary">Chat App</span> -->
               </h1>
-              <p style="color: rgb(227, 231, 236)">
+              <p style="color: rgb(235, 238, 243)">
                 A chat application makes it easy to communicate with people anywhere in the world by 
                 sending and receiving messages in real time. With a web or mobile chat app, users are 
                 able to receive the same engaging and lively interactions through custom messaging
@@ -44,43 +44,24 @@
                  instead of looking elsewhere for a messaging solution. Whether it’s private chat, group
                   chat, or large-scale chat, adding personalized chat features to your app can help ensure 
                   that your users have a memorable experience.
-              </p>
+                 </p>
             </div>
 
             <div class="col-lg-6 mb-5 mb-lg-0">
               <div class="card">
                 <div class="card-body py-5 px-md-5">
                   <form>
-                    <!-- Name input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="name">Name</label>
-                        <input
-                        type="text"
-                        id="name"
-                        class="form-control"
-                        required
-                      />
-                     </div>
-                    <!-- Phone number -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="number">Phone Number</label>  
-                        <input
-                        type="tel"
-                        id="phone"
-                        class="form-control"
-                        required
-                      />
-                    </div>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="email">Email address</label>
+                        <label class="form-label" for="email"
+                        >Email address</label>
                         <input
                         type="email"
                         id="email"
                         class="form-control"
                         required
                       />
-                      </div>
+                    </div>
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password">Password</label>
@@ -91,11 +72,11 @@
                         required
                       /><br>
                       <input type="checkbox" onclick="myFunction()"> Show Password
-                          </div>
+                    </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary w-100 mb-4" name="submit">
-                      Sign up
+                    <button type="submit" class="btn btn-primary w-100 mb-4">
+                      Login
                     </button>
 
                     <!-- <button type="submit" class="btn btn-primary w-100 mb-4">
@@ -104,8 +85,10 @@
 
                     <div>
                       <p class="mb-0">
-                        Already have an account?
-                        <a href="./login.html" class="text-black-50 fw-bold">Login</a>
+                        New user?
+                        <a href="./signup.html" class="text-black-50 fw-bold"
+                          >signup</a
+                        >
                       </p>
                     </div>
                   </form>
@@ -115,10 +98,11 @@
           </div>
         </div>
         <div
-        class="toast-msg"
-        style="position: absolute; bottom: 5px; right: 5px">
-        <!-- inside the toast -->
-      </div>
+          class="toast-msg"
+          style="position: absolute; bottom: 5px; right: 5px"
+        >
+          <!-- inside the toast -->
+        </div>
       </div>
       <!-- Jumbotron -->
     </section>
@@ -134,6 +118,6 @@
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
-  <script src="./signup.js"></script>
+    <script src="./login.js"></script>
   </body>
-</html>
+</html
