@@ -1,3 +1,20 @@
+const Chat = require("../models/chat");
+
+exports.getAllChats = async (req, res) => {
+  try {
+    const respone = await req.user.get({
+      attributes: ["chatMessage"],
+    });
+    res
+      .status(200)
+      .send({ userName: req.user.name, chats: respone, msg: "Success" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ msg: "Internal Server Error" });
+  }
+};
+
+
 exports.postChatMessage = async (req, res) => {
     try {
       const { chatMsg } = req.body;

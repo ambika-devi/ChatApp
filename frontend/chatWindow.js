@@ -19,6 +19,12 @@ const createToast = (msg, color = "orangered") => {
   }, 5000);
 };
 
+const addToChatCard = (name, text) => {
+    const html = `<li class="list-group-item">${name}: ${text}</li>`;
+    chatMessages.insertAdjacentHTML("beforeend", html);
+    textBox.value = "";
+  };
+
 const sendMsg = async (e) => {
   //e.preventDefault();
   const text = textBox.value;
@@ -32,11 +38,9 @@ const sendMsg = async (e) => {
       "http://localhost:3000/chat/chatmessage",
       data
     );
-     console.log(respone);
+     console.log(response);
     if (response.status == 200) {
-      const html = `<li class="list-group-item">${response.data.userName}: ${text}</li>`;
-      chatMessages.insertAdjacentHTML("beforeend", html);
-      textBox.value = "";
+        addToChatCard(response.data.userName, text);
       createToast(response.data.msg, "green");
     }
   } catch (error) {
@@ -49,4 +53,23 @@ const sendMsg = async (e) => {
   }
 };
 
+const onPageLoaded = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/chat/allchats");
+      if (response.status == 200) {
+        const chats = response.data.chats;
+        chats.forEach((chat) => {
+          addToChatCard(response.data.userName, chat.chatMessage);
+        });
+        createToast(response.data.msg, "green");
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.response.status == 400) {
+        createToast(error.response.data.msg);
+      }
+    }
+  };
+
 sendBtn.addEventListener("click", sendMsg);
+document.addEventListener("DOMContentLoaded",onPageLoaded);
