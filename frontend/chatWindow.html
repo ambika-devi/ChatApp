@@ -34,7 +34,7 @@
                   </ul>
                 </div>
 
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush" id="chat-messages">
                   <li class="list-group-item">user1</li>
                   <li class="list-group-item">user2</li>
                   <li class="list-group-item">user3</li>
@@ -47,18 +47,19 @@
                   Messages
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">user1: Hii!</li>
+                  <!-- <li class="list-group-item">user1: Hii!</li>
                   <li class="list-group-item">user2: Hello</li>
-                  <li class="list-group-item">user1: What's up!</li>
+                  <li class="list-group-item">user1: What's up!</li> -->
                 </ul>
                 <div class="input-group mt-3 mb-3">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Type your message here"
+                    id="input-msgbox"
+                    placeholder="Type your message here" required
                   /><br>
                   <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">Send</button>
+                    <button class="btn btn-primary" id="btn-send-msg" type="button">Send</button>
                   </div>
                 </div>
               </div>
@@ -72,5 +73,7 @@
         ></div>
       </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="./chatWindow.js"></script>
   </body>
 </html>
