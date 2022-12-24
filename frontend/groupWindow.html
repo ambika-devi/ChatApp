@@ -17,7 +17,7 @@
     <section class="main-section">
       <div
         class="px-4 py-5 px-md-5 text-center text-lg-start"
-        style="background-color: hsl(125, 85%, 62%); height: 100vh"
+        style="background-color: hsl(140, 93%, 53%); height: 100vh"
       >
         <div class="container">
           <div class="row gx-lg-5">
@@ -25,47 +25,54 @@
               <div class="card">
                 <div class="card-header" id="card-header-nav">
                   <ul class="nav nav-pills">
-                    <li class="nav-item">
-                      <btn class="btn btn-primary" id="contact-btn">Contacts</btn>
+                    <li class="nav-item mx-1">
+                      <btn class="btn" id="contact-btn">Chats</btn>
                     </li>
                     <li class="nav-item mx-1">
-                      <btn class="btn" id="group-btn">Groups</btn>
+                      <btn class="btn btn-primary" id="group-btn">Groups</btn>
                     </li>
                     <li class="nav-item mx-1">
-                      <btn class="btn" id="group-create-btn">Create Group</btn>
+                      <btn class="btn" id="create-group-btn">Create Group</btn>
                     </li>
                   </ul>
                 </div>
 
-                <ul class="list-group list-group-flush" id="users-list">
-                  <!-- <li class="list-group-item">user1</li>
-                  <li class="list-group-item">user2</li>
-                  <li class="list-group-item">user3</li> -->
+                <ul class="list-group list-group-flush" id="group-list">
+                  <li class="list-group-item">Group1</li>
+                  <li class="list-group-item">Group2</li>
+                  <li class="list-group-item">Group3</li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-6 mb-5 mb-lg-0">
               <div class="card">
                 <div
-                class="card-header text-bg-primary p-1 text-center"
-                id="message-card-header"
-              >
-                Message to : <span></span>
+                  class="card-header text-bg-primary p-1 text-center"
+                  id="message-card-header"
+                >
+                  Message to Group: <span></span>
                 </div>
-                <ul class="list-group list-group-flush" id="chat-messages">
-                  <!-- <li class="list-group-item">user1: Hii!</li>
-                  <li class="list-group-item">user2: Hello</li>
-                  <li class="list-group-item">user1: What's up!</li> -->
+                <ul class="list-group list-group-flush" id="group-messages">
+                  <!-- <li class="list-group-item">user1: An item</li>
+                  <li class="list-group-item">user2: A second item</li>
+                  <li class="list-group-item">user1: A third item</li> -->
                 </ul>
                 <div class="input-group mt-3 mb-3">
                   <input
                     type="text"
                     class="form-control"
                     id="input-msgbox"
-                    placeholder="Type your message here" required
-                  /><br>
+                    placeholder="Type your message here"
+                    required
+                  />
                   <div class="input-group-append">
-                    <button class="btn btn-primary" id="btn-send-msg" type="button">Send</button>
+                    <button
+                      class="btn btn-primary"
+                      id="btn-send-msg"
+                      type="button"
+                    >
+                      send
+                    </button>
                   </div>
                 </div>
               </div>
@@ -79,7 +86,7 @@
         ></div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
-    <script src="./chatWindow.js"></script>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+  <script src="./groupWindow.js"></script>
 </html>
