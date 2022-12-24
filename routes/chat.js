@@ -5,6 +5,8 @@ const chatController = require("../controllers/chat");
 
 router.post("/chatmessage",userAuthentication.authenticateToken,chatController.postChatMessage);
 
-router.get("/allchats",userAuthentication.authenticateToken,chatController.getAllChats);
+router.get("/allchats/:withUserId",userAuthentication.authenticateToken,chatController.getAllChats);
+
+router.get("/allusers",userAuthentication.authenticateToken,chatController.getAllUser);
 
 module.exports = router;
