@@ -13,7 +13,7 @@ exports.postRegister = (req, res) => {
       .status(400)
       .send({ msg: "Fill the details correctly!" });
   }
-  bcrypt.hash(password, saltRounds, async (err, hash) => {
+  bcrypt.hash(password, saltRounds, async (err, hash) => {     //to hash a password
     try {
       if (err) {
         throw new Error();
@@ -47,7 +47,7 @@ exports.postLogin = async (req, res) => {
     if (!user) {
       return res.status(404).send({ msg: "User not found. Please signup!" });
     } else {
-      bcrypt.compare(password, user.password, (err, result) => {
+      bcrypt.compare(password, user.password, (err, result) => {   //to verify plain text password with hashed password
         // result == true
         if (err) {
           //  throw new Error("Internal server error")

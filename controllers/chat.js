@@ -49,18 +49,18 @@ exports.getAllChats = async (req, res) => {
     console.log(error);
     res.status(500).send({ msg: "Internal Server Error" });
   }
-};
+ };
 
 
 exports.postChatMessage = async (req, res) => {
     try {
       const { toUser, chatMsg } = req.body;
-      // console.log(req.body);
-       //console.log(chatMsg);
+      console.log(req.body);
+       console.log(chatMsg);
       if (!chatMsg) 
       return res.status(400).send({ msg: "Please enter message" });
       const response = await req.user.createChatMessage({ chatMessage: chatMsg,toUser, });
-       //console.log(response);
+       console.log(response);
       res
         .status(200)
         .send({ userName: req.user.name, msg: "Message sent successfully" });

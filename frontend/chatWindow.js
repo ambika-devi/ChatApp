@@ -36,7 +36,7 @@ const onUserClick = (e) => {
     const html = `Message to : ${name} <input type='hidden' id='msg-header-user-id' value='${id}'/>`;
     messageHeader.innerHTML = html;
     chatMessages.innerHTML = "";
-    getChats(id);
+    getAllChats(id);
   }
 };
 //adding messages
@@ -126,7 +126,7 @@ const getUsers = async () => {
 };
 
 const onGroupBtnClick = () => {
-  window.location.href = "./group-window.html";
+  window.location.href = "./groupWindow.html";
   };
 const onCreateGroupBtnClick = () => {
   window.location.href = "./createGroupWindow.html";

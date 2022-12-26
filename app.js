@@ -16,7 +16,7 @@ const Groupmessage=require('./models/groupMessage');
 const Usergroup=require('./models/userGroup');
 const app = express();
 
-app.use(cors({origin:'*'}));//permitted for entire server
+app.use(cors({origin:'*'}));//allows access from any origin
 app.use(bodyParser.json());
 
 app.use("/user", userRoute);
